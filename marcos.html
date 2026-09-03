@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Água - Fonte da Vida</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f0faff;
+            color: #123;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #caf0f8;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 119, 182, 0.65), rgba(0, 180, 216, 0.65)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #0077b6;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: #caf0f8;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #0077b6;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 119, 182, 0.12);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #0077b6;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .about {
+            background: #dff6ff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: #0077b6;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #444;
+            font-size: 18px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .tips {
+            background: white;
+        }
+
+        .tip-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .tip {
+            background: #f0faff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #00b4d8;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+        }
+
+        .stats .section-title {
+            color: white;
+        }
+
+        .stats .section-subtitle {
+            color: #e5faff;
+        }
+
+        .stat-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 30px;
+        }
+
+        .stat h3 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .stat p {
+            font-size: 18px;
+        }
+
+        footer {
+            background: #023e8a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cards,
+            .stat-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">💧 Água Viva</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#importancia">Importância</a>
+            <a href="#dicas">Dicas</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>Água: Fonte da Vida 💧</h1>
+
+                <p>
+                    A água é um dos recursos mais importantes do nosso planeta.
+                    Preservá-la é cuidar da vida, da natureza e do nosso futuro.
+                </p>
+
+                <a href="#importancia" class="btn">
+                    Descubra mais
+                </a>
+            </div>
+        </section>
+
+        <section id="importancia">
+            <h2 class="section-title">Por que a água é importante?</h2>
+
+            <p class="section-subtitle">
+                A água está presente em praticamente todos os aspectos da nossa
+                vida. Ela é essencial para pessoas, animais, plantas e para o
+                equilíbrio dos ecossistemas.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">🌱</div>
+                    <h3>Natureza</h3>
+                    <p>
+                        Rios, lagos e oceanos são fundamentais para os
+                        ecossistemas e para a biodiversidade do planeta.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🧑‍⚕️</div>
+                    <h3>Saúde</h3>
+                    <p>
+                        Nosso organismo precisa de água para funcionar
+                        corretamente e manter diversas funções vitais.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🌎</div>
+                    <h3>Planeta</h3>
+                    <p>
+                        A água participa do ciclo natural da Terra e ajuda a
+                        manter o equilíbrio ambiental.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+
+                <div class="about-text">
+                    <h2>Precisamos preservar a água</h2>
+
+                    <p>
+                        Embora exista muita água no planeta, apenas uma pequena
+                        parte está disponível como água doce acessível para
+                        consumo humano. Por isso, evitar desperdícios e proteger
+                        rios, nascentes e mananciais é responsabilidade de todos.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Pequenas atitudes no dia a dia podem contribuir para um
+                        uso mais consciente desse recurso tão precioso.
+                    </p>
+                </div>
+
+                <div class="about-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=1000&q=80"
+                        alt="Água cristalina">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tips" id="dicas">
+
+            <h2 class="section-title">Como economizar água?</h2>
+
+            <p class="section-subtitle">
+                Confira algumas atitudes simples que podem ajudar a reduzir o
+                desperdício de água.
+            </p>
+
+            <div class="tip-list">
+
+                <div class="tip">
+                    🚿 Tome banhos mais curtos e evite deixar o chuveiro ligado
+                    sem necessidade.
+                </div>
+
+                <div class="tip">
+                    🚰 Feche a torneira enquanto escova os dentes.
+                </div>
+
+                <div class="tip">
+                    🧺 Utilize a máquina de lavar roupas somente quando houver
+                    uma quantidade adequada de roupas.
+                </div>
+
+                <div class="tip">
+                    🌧️ Quando possível, aproveite água da chuva para atividades
+                    que não exigem água potável.
+                </div>
+
+                <div class="tip">
+                    🔧 Conserte torneiras e encanamentos que apresentem
+                    vazamentos.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="stats" id="curiosidades">
+
+            <h2 class="section-title">Curiosidades sobre a água</h2>
+
+            <p class="section-subtitle">
+                A água possui características incríveis e está presente em
+                praticamente todos os processos naturais da Terra.
+            </p>
+
+            <div class="stat-container">
+
+                <div class="stat">
+                    <h3>💧</h3>
+                    <p>
+                        A água pode ser encontrada naturalmente nos estados
+                        sólido, líquido e gasoso.
+                    </p>
+                </div>
+
+                <div class="stat">
+                    <h3>🌊</h3>
+                    <p>
+                        Oceanos e mares cobrem grande parte da superfície
+                        terrestre.
+                    </p>
+                </div>
+
+                <div class="stat">
+                    <h3>♻️</h3>
+                    <p>
+                        A água participa continuamente do ciclo da água,
+                        circulando entre atmosfera, solo e corpos d'água.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>💧 Água Viva</p>
+        <p>Preservar a água é preservar a vida.</p>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
